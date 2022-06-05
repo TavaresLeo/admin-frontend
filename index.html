@@ -1,68 +1,179 @@
 <html>
+
     <head>
         <title>Form Contato</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
 
     <style>
-        *{margin:0;padding:0;box-sizing: border-box;}
-        body{
-            background-color: #5F7C8A;
+        /* VERSÃO PARA CELULAR */
+        @media only screen and (max-width: 359px) {
+            .login{
+                display: none;
+            }
+        }        
+        
+        /* VERSÃO PARA SMARTPHONE */
+        @media only screen and (min-width: 360px) and (max-width: 1335px) {
+
+            .logo-web {
+                display: none;
+            }
+
+            .deprecated {
+                display: none;
+            }
+
+            *{margin:0;padding:0;box-sizing: border-box;}
+        
+            body{
+                background-color: #333d44;
+            }
+
+            form{
+                background-color: white;
+                max-width: 500px;
+                width:70%;
+                padding:20px;
+                position:absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+            }
+
+            form h3{
+                text-align: center;
+                color:  #5F7C8A;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+
+            form input[type=text],
+            form input[type=password]{
+                width: 100%;
+                height: 45px;
+                border: 1px solid #ccc;
+                padding-left: 10px;
+                margin: 10px 0;
+            }
+
+            /* Pra estudar quando tiver dibob: https://www.freecodecamp.org/news/css-transition-examples/ */
+    
+            form input[type=submit]{
+                width: 100%;
+                height: 40px;
+                cursor: pointer;
+                background: #5F7C8A;
+                color: white;
+                border: 0;
+                border-radius: 20px;
+                transition: 1s;
+            }
+
+
+            form input[type=submit]:hover{
+                background-color: #4a5f6a;
+            }
+            form input[type=text]:focus{
+                outline: 0;
+            }
+            form input[type=password]:focus{
+                outline: 0;
+            }            
         }
 
-        form{
-            background-color: white;
-            max-width: 500px;
-            width:70%;
-            padding:20px;
-            position:absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%,-50%);
-        }
-        form h3{
-            text-align: center;
-            color:  #5F7C8A;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        }
+        /* VERSÃO PARA COMPUTADORES */
+        @media only screen and (min-width: 1336px) {
+            body {
+                margin: 0;
+            }
 
-        form input[type=text],
-        form input[type=password]{
-            width: 100%;
-            height: 45px;
-            border: 1px solid #ccc;
-            padding-left: 10px;
-            margin: 10px 0;
-        }
-   
-        form input[type=submit]{
-            width: 100%;
-            height: 40px;
-            cursor: pointer;
-            background: #5F7C8A;
-            color: white;
-            border: 0;
-            border-radius: 20px;
-            transition: 1s;
-        }
+            .deprecated {
+                display: none;
+            }
 
-        form input[type=submit]:hover{
-            background-color: #4a5f6a;
-        }
-        form input[type=text]:focus{
-            outline: 0;
-        }
-        form input[type=password]:focus{
-            outline: 0;
+            .login {
+                background: #3c1cce8a;
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                display: table;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }    
+            
+            form {
+                width: 430px;
+                margin-left: auto;
+                vertical-align: middle;
+                display: table-cell;
+            }
+            
+            .enter-title {
+                color: #ffffff;
+                padding-top: 10px;
+                padding-bottom: 5px;
+                margin: 0;
+                font-size: 16px;
+                font-weight: 300;
+                display: none;
+            }
+            
+            input#email, input#password {
+                outline: 0;
+                height: 33px;
+                margin-right: 3px;
+            }
+            
+            .btn {
+                background: #000;
+                color: #fff;
+                height: 31.5px;
+                line-height: 25px;
+                font-size: 16px;
+                font-weight: 500;
+                cursor: pointer;
+            }
+            
+            .logo-web img {
+                width: 90px;
+            } 
+            
+            .logo-web img {
+                width: 70px;
+                cursor: pointer;
+            }
+            
+            .logo-web {
+                display: table-cell;
+                vertical-align: middle;
+                width: 105px;
+                text-align: center;
+            }           
+            
+            .form-box {
+                display: table;
+                margin-left: auto;
+            }            
         }
     </style>
     
     <body>
-        <form>
-            <h3>Entrar em contato</h3>
-            <input id="email" type="text" name="email" placeholder="Seu e-mail..." />
-            <input id="password" type="password" name="senha" placeholder="Sua senha..." />
-            <input type="submit" name="acao" value="Enviar" />
-        </form>
+        <h1 class="deprecated">TROCA ESSE TELEFONE MEU FILHO!</h1>
+        
+        <nav class="login">
+            <div class="logo-web">
+                <img src="assets/img/logo.png" alt="www.leotavares.com.br">
+            </div>
+            <div class="form-box">
+                <form>
+                    <h3 class="enter-title">Entrar em contato</h3>
+                    <input id="email" type="text" name="email" placeholder="Seu e-mail..." />
+                    <input id="password" type="password" name="senha" placeholder="Sua senha..." />
+                    <input class="btn" type="submit" name="acao" value="Enviar" />
+                </form>                
+            </div>
+        </nav>
+        
         <script>
             var email = document.getElementById('email');
             var password = document.getElementById('password');
